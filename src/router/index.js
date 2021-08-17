@@ -16,12 +16,18 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: Login,
+    meta:{
+      isHide:true
+    }
   },
   {
     path: '/search',
     name: 'Search',
-    component: Search
+    component: Search,
+    meta:{
+      isHide:true
+    }
   },
   {
     path: '/register',
