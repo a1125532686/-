@@ -25,14 +25,15 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: Search,
-    meta:{
-      isHide:true
-    }
+    
   },
   {
     path: '/register',
     name: 'Register',
-    component: Register
+    component: Register,
+    meta:{
+      isHide:true
+    }
   },
   
   
