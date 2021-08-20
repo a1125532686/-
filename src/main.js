@@ -5,7 +5,7 @@ import store from './store'
 import TypeNav from './components/TypeNav'
 import Carousel from './components/Carousel'
 import './styles/reset.css'
-import './mock'
+import './Mock'
 Vue.config.productionTip = false
 Vue.component('TypeNav' , TypeNav)
 Vue.component('Carousel',Carousel)

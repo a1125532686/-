@@ -14,9 +14,8 @@
         <a href="###">秒杀</a>
       </nav>
       <div
-        class="sort"
-        @click="goSearch">
-        <div class="all-sort-list2">
+        class="sort">
+        <div class="all-sort-list2" @click="goSearch">
           <div class="item bo" v-for="c1 in categoryList" :key="c1.categoryId">
             <!-- 一级分类 -->
             <h3>
@@ -83,6 +82,8 @@ export default {
   methods: {
     ...mapActions("home", ["getCategoryList"]),
     goSearch(e) {
+      //获取自定义属性
+      console.log(e.target.dataset);
       const { id, level, name } = e.target.dataset;
       if (!id) return;
 

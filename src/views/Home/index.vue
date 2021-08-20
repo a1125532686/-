@@ -10,15 +10,14 @@
     <!-- 猜你喜欢 -->
     <Like />
     <!--楼层-->
-    <Floor />
-    <!--楼层-->
-    <Floor />
+    <Floor v-for="floor in floors" :key="floor.id" :floor="floor"/>
     <!--商标-->
     <Brand />
   </div>
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
   import Brand from './Brand/Brand'
   import Floor from './Floor/Floor'
   import Like from './Like/Like'
@@ -34,6 +33,15 @@
       ListContainer,
       Rank,
       TodayRecommend,
+    },
+    computed:{
+      ...mapState('home',['floors'])
+    },
+    methods:{
+      ...mapActions('home',['getFloors'])
+    },
+    mounted(){
+      this.getFloors()
     }
   }
 </script>

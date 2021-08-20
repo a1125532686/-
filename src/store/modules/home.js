@@ -1,10 +1,11 @@
-import {reqGetCategoryList , reqGetBanners} from '../../api/home'
+import {reqGetCategoryList , reqGetBanners , reqGetFloors} from '../../api/home'
 
 const state = {
   //首页三级分类列表
   categoryList:[],
   //轮播图列表
-  banners:[]
+  banners:[],
+  floors:[]
 
 }
 
@@ -26,6 +27,14 @@ const actions = {
     }catch(e){
       console.log(e);
     }
+  },
+  async getFloors({commit}) {
+    try{
+      const floors = await reqGetFloors()
+      commit('GET_FLOORS', floors)
+    }catch(e){
+      console.log(e);
+    }
   }
 }
 //更新state数据
@@ -35,6 +44,9 @@ const mutations = {
   },
   GET_BANNERS(state,banners) {
     state.banners = banners
+  },
+  GET_FLOORS(state,floors) {
+    state.floors = floors
   }
 }
 

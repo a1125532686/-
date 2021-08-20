@@ -35,7 +35,7 @@
       </ul>
     </div>
     <div class="header-btn">
-      <router-link to="/"><img src="./logo.png" alt=""></router-link>
+      <router-link to="/"><img src="./logo.png" alt="logo"></router-link>
       <form class="header-from">
         <input type="text" class="header-input">
         <button class="header-button" @click.prevent="goSearch">搜索</button>
